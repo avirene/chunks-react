@@ -1,5 +1,6 @@
 // import { useEffect } from "react";
 import "semantic-ui-css/semantic.min.css";
+// import { LoginData } from "../../data/LoginData";
 
 export default function Profile() {
   // useEffect(() => {
