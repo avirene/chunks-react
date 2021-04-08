@@ -40,8 +40,6 @@ const Login = () => {
     }
   };
 
-  console.log("Login unsuccessful:", err);
-
   return (
     <>
       <h1>Login</h1>
