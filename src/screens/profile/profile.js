@@ -1,5 +1,5 @@
 // import { useEffect } from "react";
-import "semantic-ui-css/semantic.min.css";
+// import "semantic-ui-css/semantic.min.css";
 // import { LoginData } from "../../data/LoginData";
 import { useState } from "react";
 import { Form, Button } from "semantic-ui-react";
@@ -8,8 +8,7 @@ import { useHistory } from "react-router-dom";
 const Profile = () => {
   const [form, setForm] = useState({
     word: "",
-    definition: "",
-    example: ""
+    definition: ""
   });
 
   const [err, setError] = useState("");
@@ -22,9 +21,7 @@ const Profile = () => {
 
   const handleSaveSubmit = (_) => {
     setError("");
-    const submission = {
-      ...form
-    };
+    const submission = { ...form };
     const entries = JSON.parse(localStorage.getItem("entries"));
     const entry = entries.find((item) => {
       return item.word === submission.word;
@@ -41,6 +38,7 @@ const Profile = () => {
   } else {
     setError("Entry not saved");
   }
+  };
   // useEffect(() => {
   //   localStorage.setItem("users", JSON.stringify(LoginData));
   // }, []);
@@ -71,12 +69,11 @@ const Profile = () => {
           />
         </Form.Field>
         <Button type="submit">Submit</Button>
+        {err && <h2>error</h2>}
       </Form>
     </>
   );
-}
 
 };
 
 export default Profile;
-
