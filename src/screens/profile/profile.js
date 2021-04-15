@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { Form, Button } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
+import Screen from '../../components/Screen';
 
 const Profile = () => {
   const [form, setForm] = useState({
@@ -45,6 +46,7 @@ const Profile = () => {
   // const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
   return (
+    <Screen>
     <>
       <h1>Your entries</h1>
       <Form onSubmit={handleSaveSubmit}>
@@ -72,6 +74,7 @@ const Profile = () => {
         {err && <h2>error</h2>}
       </Form>
     </>
+    </Screen>
   );
 
 };
