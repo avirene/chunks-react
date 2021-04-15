@@ -48,7 +48,7 @@ const Profile = () => {
   return (
     <Screen>
     <>
-      <h1>Your entries</h1>
+      <h1>New Entry</h1>
       <Form onSubmit={handleSaveSubmit}>
         <Form.Field>
           <label>Word</label>
@@ -73,6 +73,7 @@ const Profile = () => {
         <Button type="submit">Submit</Button>
         {err && <h2>error</h2>}
       </Form>
+      <h1>Your entries</h1>
     </>
     </Screen>
   );
