@@ -2,21 +2,19 @@
 import "semantic-ui-css/semantic.min.css";
 // import { SavedData } from "../../data/SavedData";
 import { useState } from "react";
-import { Form, Button } from "semantic-ui-react";
+// import { Form, Button } from "semantic-ui-react";
 import { useHistory } from "react-router-dom";
 import Screen from '../../components/Screen';
 
-const Profile = () => {
-  const [form, setForm] = useState({
-    word: "",
-    definition: ""
-  });
+const EntriesList = ({
+  entries,
+  }) => {
 
   const [err, setError] = useState("");
 
-  const handleOnChange = ({ target: { name, value } }) => {
-    setForm({ ...form, [name]: value });
-  };
+  // const handleOnChange = ({ target: { name, value } }) => {
+  //   setForm({ ...form, [name]: value });
+  // };
 
   const history = useHistory();
 
@@ -84,4 +82,8 @@ const Profile = () => {
 
 };
 
-export default Profile;
+EntriesList.propTypes = {
+  entries: propTypes.array,
+};
+
+export default EntriesList;
