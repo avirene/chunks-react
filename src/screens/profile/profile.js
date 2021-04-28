@@ -12,8 +12,6 @@ const Profile = () => {
     definition: ""
   });
 
-  const [err, setError] = useState("");
-
   const handleOnChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
@@ -21,24 +19,9 @@ const Profile = () => {
   const history = useHistory();
 
   const handleSaveSubmit = (_) => {
-    setError("");
     const submission = { ...form };
-    const entries = JSON.parse(localStorage.getItem("entries"));
-    const entry = entries.find((item) => {
-      return item.word === submission.word;
-    });
-
-  const submitSuccessful = entry
-    ? entry.definition === submission.definition
-      ? true
-      : false
-    : false;
-  if (submitSuccessful) {
-    localStorage.setItem("savedEntry", entry.word);
-    history.push("/profile");
-  } else {
-    setError("Entry not saved");
-  }
+    const entries = localStorage.setItem("savedEntry");
+    history.push("/entry");
   };
 
   // useEffect(() => {
@@ -73,7 +56,6 @@ const Profile = () => {
           />
         </Form.Field>
         <Button type="submit">Submit</Button>
-        {err && <h2>error</h2>}
       </Form>
       <h1>Your entries</h1>
       <label>{form.word}</label>
