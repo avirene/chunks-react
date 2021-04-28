@@ -20,8 +20,8 @@ const Profile = () => {
 
   const handleSaveSubmit = (_) => {
     const submission = { ...form };
-    const entries = localStorage.setItem("savedEntry");
-    history.push("/entry");
+    const entries = localStorage.setItem("entry", submission);
+    history.push("/entries");
   };
 
   // useEffect(() => {
