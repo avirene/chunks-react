@@ -1,4 +1,5 @@
 // import { useEffect } from "react";
+import PropTypes from 'prop-types';
 import "semantic-ui-css/semantic.min.css";
 // import { SavedData } from "../../data/SavedData";
 import { useState } from "react";
@@ -64,6 +65,10 @@ const Profile = () => {
     </Screen>
   );
 
+};
+
+Profile.propTypes = {
+  entries: PropTypes.array,
 };
 
 export default Profile;

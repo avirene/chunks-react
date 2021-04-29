@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Entry from './Entry';
+// import Entry from './Entry';
 import Screen from '../../components/Screen';
 import { Card } from "semantic-ui-react";
 
@@ -19,7 +19,7 @@ const EntriesList = ({
     <Card.Group doubling itemsPerRow={4}>
       {entries.map(
         ({ id, word, definition }) => (
-          <Entry
+          <Card
           key={id}
           word={word}
           definition={definition}
